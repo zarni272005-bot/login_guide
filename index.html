@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Full-stack Login  & Registration</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <main class="container">
+            <div class="form-box" id="login-form">
+                <h2>Login</h2>
+                <form data-auth-form="login">
+                    <div class="login-method-toggle" role="group" aria-label="Choose sign-in method">
+                        <button class="method-button active" type="button" data-identifier-method="email" aria-pressed="true">Email</button>
+                        <button class="method-button" type="button" data-identifier-method="phone" aria-pressed="false">Phone</button>
+                    </div>
+                    <input id="login-identifier" data-identifier type="email" name="identifier" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+                    <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="divider" aria-hidden="true"><span>or continue with</span></div>
+                <div class="social-login" aria-label="Other sign-in methods">
+                        <button class="social-button" type="button" data-provider="TikTok" aria-label="Continue with TikTok">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a7.1 7.1 0 0 1-4.3-1.5v9.1a6.1 6.1 0 1 1-5.3-6V12a2.8 2.8 0 1 0 2 2.7V2h3.3c.2 2.1 1.8 3.8 4.3 4.1z"/></svg>
+                            <span>TikTok</span>
+                        </button>
+                        <button class="social-button" type="button" data-provider="Facebook" aria-label="Continue with Facebook">
+                            <svg class="facebook-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8z"/></svg>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="social-button" type="button" data-provider="GitHub" aria-label="Continue with GitHub">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.6 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9z"/></svg>
+                            <span>GitHub</span>
+                        </button>
+                </div>
+                <p class="auth-message" id="login-message" role="status" aria-live="polite">Social sign-in requires OAuth setup.</p>
+                <p>Don't have an account? <a href="#register" data-show-form="register">Register</a></p>
+            </div>
+
+            <div class="form-box register-box" id="register-form" hidden>
+                <h2>Create Account</h2>
+                <p class="register-intro">Join us by creating your account</p>
+                <form data-auth-form="register">
+                    <input type="text" name="name" placeholder="Full Name" aria-label="Full Name" autocomplete="name" minlength="2" maxlength="80" required>
+                    <div class="login-method-toggle" role="group" aria-label="Choose registration contact method">
+                        <button class="method-button active" type="button" data-identifier-method="email" aria-pressed="true">Email</button>
+                        <button class="method-button" type="button" data-identifier-method="phone" aria-pressed="false">Phone</button>
+                    </div>
+                    <input id="register-identifier" data-identifier type="email" name="identifier" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+                    <input type="password" name="password" placeholder="Password (at least 10 characters)" aria-label="Password" autocomplete="new-password" minlength="10" maxlength="128" required>
+                    <button type="submit">Create account</button>
+                </form>
+                <div class="divider" aria-hidden="true"><span>or continue with</span></div>
+                <div class="social-login" aria-label="Register with another account">
+                    <button class="social-button" type="button" data-provider="TikTok" aria-label="Continue with TikTok">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a7.1 7.1 0 0 1-4.3-1.5v9.1a6.1 6.1 0 1 1-5.3-6V12a2.8 2.8 0 1 0 2 2.7V2h3.3c.2 2.1 1.8 3.8 4.3 4.1z"/></svg>
+                        <span>TikTok</span>
+                    </button>
+                    <button class="social-button" type="button" data-provider="Facebook" aria-label="Continue with Facebook">
+                        <svg class="facebook-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8z"/></svg>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="social-button" type="button" data-provider="GitHub" aria-label="Continue with GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.6 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9z"/></svg>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+                <p class="auth-message" id="register-message" role="status" aria-live="polite">Social sign-in requires OAuth setup.</p>
+                <p>Already have an account? <a href="#login" data-show-form="login">Login</a></p>
+            </div>
+            <section class="form-box account-box" id="account-view" aria-live="polite" hidden>
+                <h2>You're signed in</h2>
+                <p id="account-details"></p>
+                <button type="button" id="logout-button">Log out</button>
+            </section>
+        </main>
+        <script src="static/app.js" defer></script>
+    </body>
+</html>
