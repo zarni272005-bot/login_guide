@@ -20,7 +20,13 @@
                     <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                     <button type="submit">Login</button>
                 </form>
-                <div class="divider" aria-hidden="true"><span>or continue with</span></div>
+                <div class="divider">
+                    <span>or continue with</span>
+                    <details class="signin-help">
+                        <summary aria-label="About social sign-in">?</summary>
+                        <p>These buttons are for using a TikTok, Facebook, or GitHub account. Social sign-in is not connected yet, so use Email or Phone to sign in with an account you registered here.</p>
+                    </details>
+                </div>
                 <div class="social-login" aria-label="Other sign-in methods">
                         <button class="social-button" type="button" data-provider="TikTok" aria-label="Continue with TikTok">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a7.1 7.1 0 0 1-4.3-1.5v9.1a6.1 6.1 0 1 1-5.3-6V12a2.8 2.8 0 1 0 2 2.7V2h3.3c.2 2.1 1.8 3.8 4.3 4.1z"/></svg>
@@ -52,7 +58,13 @@
                     <input type="password" name="password" placeholder="Password (at least 10 characters)" aria-label="Password" autocomplete="new-password" minlength="10" maxlength="128" required>
                     <button type="submit">Create account</button>
                 </form>
-                <div class="divider" aria-hidden="true"><span>or continue with</span></div>
+                <div class="divider">
+                    <span>or continue with</span>
+                    <details class="signin-help">
+                        <summary aria-label="About social sign-in">?</summary>
+                        <p>These buttons are for registering with a TikTok, Facebook, or GitHub account. Social sign-in is not connected yet; use Email or Phone to create an account here.</p>
+                    </details>
+                </div>
                 <div class="social-login" aria-label="Register with another account">
                     <button class="social-button" type="button" data-provider="TikTok" aria-label="Continue with TikTok">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a7.1 7.1 0 0 1-4.3-1.5v9.1a6.1 6.1 0 1 1-5.3-6V12a2.8 2.8 0 1 0 2 2.7V2h3.3c.2 2.1 1.8 3.8 4.3 4.1z"/></svg>

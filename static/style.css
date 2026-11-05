@@ -7,11 +7,23 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow-y: auto;
     padding: 32px 20px;
     background:
         linear-gradient(rgba(18, 8, 18, 0.48), rgba(18, 8, 18, 0.58)),
@@ -172,12 +184,55 @@ p a:hover {
 }
 
 .divider {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
     margin: 22px 0 16px;
     color: #ded8e8;
     font-size: 13px;
+}
+
+.signin-help {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.signin-help summary {
+    display: grid;
+    width: 19px;
+    height: 19px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    list-style: none;
+}
+
+.signin-help summary::-webkit-details-marker {
+    display: none;
+}
+
+.signin-help p {
+    position: absolute;
+    z-index: 2;
+    right: -8px;
+    bottom: calc(100% + 10px);
+    width: min(260px, calc(100vw - 80px));
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: #211b2c;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    color: #f7f3ff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .divider::before,
